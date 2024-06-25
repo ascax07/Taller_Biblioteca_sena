@@ -20,6 +20,9 @@ public class usuarioService implements I_usuarioService{
 
     @Override
     public String save(usuario usuario) {
+        if (data.existsByCorreoAndTipoUsuario(usuario.getCorreo_electronico(), usuario.getTipo_usuario())) {
+            throw new IllegalArgumentException("Ya existe un usuario con este correo y rol.");
+        }
         data.save(usuario);
         return usuario.getId();
     }
@@ -32,12 +35,10 @@ public class usuarioService implements I_usuarioService{
     }
 
 
-    // @Override
-	// public List<usuario> filtrousuario(String filtro) {
-	// 	List <usuario> listaUsuario=data.filtrousuario(filtro);
-	// 	return listaUsuario;
-	// }
-
+  @Override
+    public List<usuario> filtroUsuario(String filtro) {
+        return data.filtroUsuario(filtro);
+    }
     @Override
     public Optional<usuario> findOne(String id) {
         Optional<usuario> usuario = data.findById(id);

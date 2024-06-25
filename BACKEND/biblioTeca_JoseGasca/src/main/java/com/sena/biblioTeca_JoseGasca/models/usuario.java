@@ -5,6 +5,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class usuario {
@@ -16,19 +20,28 @@ public class usuario {
 	
 	
 	@Column(name="nombre", nullable=false)
-	private String nombre;
+    @NotNull(message = "El nombre no puede estar vacío")
+    @Size(min = 1, max = 100, message = "El nombre debe tener entre 1 y 100 caracteres")
+    private String nombre;
 	
 	
-	@Column(name="direccion", nullable=false)
-	private String direccion;
+    @Column(name="direccion", nullable=false)
+    @NotNull( message = "La dirección no puede estar vacía")
+    @Size(min = 1, max = 100, message = "la direccion debe tener entre 1 y 100 caracteres")
+    private String direccion;
 	
 	
-	@Column(name="correo_electronico", nullable=false, length = 320)
+
+    @NotNull(message = "El correo electrónico no puede estar vacío")
+    @Email(message = "El correo electrónico debe tener un formato válido de  @  ")
+    @Size(min = 1,  message = "la direccion debe tener  minimo 1  caracter")
+    @Column(name="correo_electronico", nullable=false, unique=true)
 	private String correo_electronico;
 	
-	
-	@Column(name="Tipo_usuario", nullable=false, length = 13)
-	private String Tipo_usuario;
+    @Column(name="tipo_usuario", nullable=false)
+    @NotNull(message = "El tipo de usuario no puede estar vacío")
+    @Pattern(regexp = "lector|bibliotecario|administrador", message = "El tipo de usuario debe ser uno de los siguientes: lector, bibliotecario, administrador")
+	private String tipo_usuario;
 
 
     public usuario() {
@@ -36,12 +49,16 @@ public class usuario {
     }
 
 
-    public usuario(String id, String nombre, String direccion, String correo_electronico, String tipo_usuario) {
+    public usuario(String id,
+            @NotNull(message = "El nombre no puede estar vacío") @Size(min = 1, max = 100, message = "El nombre debe tener entre 1 y 100 caracteres") String nombre,
+            @NotNull(message = "La dirección no puede estar vacía") @Size(min = 1, max = 100, message = "la direccion debe tener entre 1 y 100 caracteres") String direccion,
+            @NotNull(message = "El correo electrónico no puede estar vacío") @Email(message = "El correo electrónico debe tener un formato válido de  @  ") @Size(min = 1, message = "la direccion debe tener  minimo 1  caracter") String correo_electronico,
+            @NotNull(message = "El tipo de usuario no puede estar vacío") @Pattern(regexp = "lector|bibliotecario|administrador", message = "El tipo de usuario debe ser uno de los siguientes: lector, bibliotecario, administrador") String tipo_usuario) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.correo_electronico = correo_electronico;
-        Tipo_usuario = tipo_usuario;
+        this.tipo_usuario = tipo_usuario;
     }
 
 
@@ -86,20 +103,13 @@ public class usuario {
 
 
     public String getTipo_usuario() {
-        return Tipo_usuario;
+        return tipo_usuario;
     }
 
 
     public void setTipo_usuario(String tipo_usuario) {
-        Tipo_usuario = tipo_usuario;
+        this.tipo_usuario = tipo_usuario;
     }
-
-    
-    
-	
-
-    
-
 
 
 }

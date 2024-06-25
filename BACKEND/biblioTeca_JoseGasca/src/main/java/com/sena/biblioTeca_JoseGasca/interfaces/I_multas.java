@@ -8,5 +8,7 @@ import com.sena.biblioTeca_JoseGasca.models.multas;
 
 @Repository
 public interface I_multas extends CrudRepository<multas,String>{
-    
+
+
+
 }

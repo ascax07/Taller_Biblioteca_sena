@@ -6,10 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sena.biblioTeca_JoseGasca.interfaces.I_Libro;
+
 import com.sena.biblioTeca_JoseGasca.interfaces.I_multas;
 import com.sena.biblioTeca_JoseGasca.interfacesService.I_multasService;
-import com.sena.biblioTeca_JoseGasca.models.libro;
 import com.sena.biblioTeca_JoseGasca.models.multas;
 
 @Service

@@ -7,9 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-
-import com.sena.biblioTeca_JoseGasca.models.usuario;
-
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 
 
 @Entity
@@ -20,27 +21,34 @@ public class multas {
 	@Column(name="id", nullable=false, length = 36)
 	private String id;
 	
-	
-	@ManyToOne
-    @JoinColumn(name = "usuario_prestamo")
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id", nullable = false)
+    @NotNull(message = "El usuario multado no puede estar vacío")
     private usuario usuario;
 	
-	
+
     @ManyToOne
-    @JoinColumn(name = "prestamo")
+    @JoinColumn(name = "prestamo_id", nullable = false)
+    @NotNull(message = "El préstamo no puede estar vacío")
     private prestamo prestamo;
 	
-	
-	@Column(name="valor_multa", nullable=false, length = 10000)
-	private String valor_multa;
-	
-	
-	@Column(name="fecha_multa", nullable=false)
-	private String fecha_multa;
+
+    @Column(name = "valor_multa", nullable = false)
+    @Positive(message = "El valor de la multa debe ser positivo")
+    private double valor_multa;
 	
 	
-	@Column(name="estado", nullable=false, length = 13)
-	private String estado; 
+
+    @Column(name = "fecha_multa", nullable = false)
+    @NotEmpty(message = "La fecha de la multa no puede estar vacía")
+    private String fecha_multa;
+	
+
+    @Column(name = "estado", nullable = false, length = 13)
+    @NotEmpty(message = "El estado no puede estar vacío")
+    @Pattern(regexp = "pendiente|pagado", message = "El estado debe ser pendiente o pagado")
+    private String estado;
     
 
     public multas() {
@@ -48,9 +56,12 @@ public class multas {
     }
 
 
-    public multas(String id, com.sena.biblioTeca_JoseGasca.models.usuario usuario,
-            com.sena.biblioTeca_JoseGasca.models.prestamo prestamo, String valor_multa, String fecha_multa,
-            String estado) {
+    public multas(String id,
+            com.sena.biblioTeca_JoseGasca.models.@NotNull(message = "El usuario multado no puede estar vacío") usuario usuario,
+            com.sena.biblioTeca_JoseGasca.models.@NotNull(message = "El préstamo no puede estar vacío") prestamo prestamo,
+            @Positive(message = "El valor de la multa debe ser positivo") double valor_multa,
+            @NotEmpty(message = "La fecha de la multa no puede estar vacía") String fecha_multa,
+            @NotEmpty(message = "El estado no puede estar vacío") @Pattern(regexp = "Pendiente|Pagado", message = "El estado debe ser Pendiente o Pagado") String estado) {
         this.id = id;
         this.usuario = usuario;
         this.prestamo = prestamo;
@@ -90,12 +101,12 @@ public class multas {
     }
 
 
-    public String getValor_multa() {
+    public double getValor_multa() {
         return valor_multa;
     }
 
 
-    public void setValor_multa(String valor_multa) {
+    public void setValor_multa(double valor_multa) {
         this.valor_multa = valor_multa;
     }
 
@@ -119,7 +130,5 @@ public class multas {
         this.estado = estado;
     }
 
-
-    
 
 }

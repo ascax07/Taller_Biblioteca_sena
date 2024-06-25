@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BiblioTecaJoseGascaApplication<biblioTeca_JoseGasca>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.sena.biblioTeca_JoseGasca.BiblioTecaJoseGascaApplication",
+            "projectName": "biblioTeca_JoseGasca",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -9,8 +9,9 @@ public interface I_LibroService {
 
     public String save(libro libro);    
     public List<libro> findAll();
-    //public List<LIBRO> filtroLIBRO (String filtro);
     public Optional<libro> findOne(String id);
     public int delete(String id);
-    
+    List<libro> filtroLibro(String filtro);
+    boolean updateLibro(libro libroUpdate); 
+
 }

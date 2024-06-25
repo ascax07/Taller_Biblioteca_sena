@@ -10,7 +10,7 @@ public interface I_usuarioService {
     
     public String save(usuario usuario);    
     public List<usuario> findAll();
-    //public List<usuarioo> filtrousuarioo (String filtro);
+    List<usuario> filtroUsuario(String filtro);
     public Optional<usuario> findOne(String id);
     public int delete(String id);
 
