@@ -1,0 +1,28 @@
+body {
+    background: #212121;
+}
+
+h1 {
+    font-family: inherit;
+    color: #717171;
+    font-weight: 600;
+}
+
+
+
+
+.table-row, .table-cell {
+    background-color: #212121;
+    color: #717171;
+   
+}
+
+.table-striped {
+
+    background-color: #212121;
+    color: #717171;
+
+
+}
+
+

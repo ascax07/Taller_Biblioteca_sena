@@ -5,7 +5,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #f8f9fa; /* Color de fondo del sidebar */
+    background-color: #212121; /* Color de fondo del sidebar */
     padding-top: 60px; /* Espacio para evitar solapamiento con la barra de navegación */
 }
 
@@ -13,10 +13,11 @@
     padding: 10px 15px;
     text-decoration: none;
     font-size: 18px;
-    color: #343a40; /* Color de los enlaces del sidebar */
+    color: #717171; /* Color de los enlaces del sidebar */
     display: block;
 }
 
 .sidebar a:hover {
     background-color: #e9ecef; /* Color de fondo cuando se pasa el ratón sobre un enlace */
 }
+
