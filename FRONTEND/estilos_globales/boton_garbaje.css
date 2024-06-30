@@ -1,0 +1,107 @@
+.button_garbaje {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100px;
+    height: 40px;
+    border: none;
+    padding: 0px 20px;
+    background-color: rgb(45, 43, 46);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0px rgb(113, 112, 113);
+    transition-duration: .3s;
+}
+  
+.svg {
+    width: 13px;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    fill:rgba(255, 4, 154, 0.33);
+    transition-duration: .3s;
+}
+  
+.button_garbaje:hover {
+    color: transparent;
+}
+  
+.button_garbaje:hover .svg {
+    right: 43%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    transition-duration: .3s;
+}
+  
+.button_garbaje:active {
+    transform: translate(3px , 3px);
+    transition-duration: .3s;
+    box-shadow: 2px 2px 0px rgb(7, 181, 255);
+}
+
+.button_garbaje {
+    --main-focus: #2d8cf0;
+    --font-color: #dedede;
+    --bg-color-sub: #40052e;
+    --bg-color: #000000;
+    --main-color:rgba(255, 4, 154, 0.33);
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+.button_garbaje, .button__icon, .button__text {
+    transition: all 0.3s;
+}
+  
+.button_garbaje .button__text {
+    transform: translateX(33px);
+    color: var(--font-color);
+    font-weight: 600;
+}
+  
+.button_garbaje .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.button_garbaje .svg {
+    width: 20px;
+    fill: var(--main-color);
+}
+  
+.button_garbaje:hover {
+    background: var(--bg-color);
+}
+  
+.button_garbaje:hover .button__text {
+    color: transparent;
+}
+  
+.button_garbaje:hover .button__icon {
+    width: 125px;
+    transform: translateX(0);
+}
+  
+.button_garbaje:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+}

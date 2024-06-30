@@ -22,6 +22,4 @@ public interface I_Libro  extends CrudRepository<libro,String>{
     List<libro> filtroLibro(String filtro);
 
 
-
-
 }

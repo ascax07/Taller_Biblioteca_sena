@@ -7,17 +7,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../estilos_globales/search.css">
     <link rel="stylesheet" href="../estilos_globales/sidebar.css">
+    <link rel="stylesheet" href="../estilos_globales/listado.css">
+    <link rel="stylesheet" href="../estilos_globales/boton_elegante.css">
+    <link rel="stylesheet" href="../estilos_globales/boton_editar.css">
+    <link rel="stylesheet" href="../estilos_globales/boton_garbaje.css">
+    <link rel="stylesheet" href="../estilos_globales/modal.css">
     <title>Listado Multas</title>
 </head>
 
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="#">Libros</a>
-        <a href="#">Usuarios</a>
-        <a href="#">Préstamos</a>
-        <a href="#">Multas</a>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 style="color: white;" >Biblio admin</h2>
+    <br>
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_usuarios/listaUsuarios.html">usuarios</a>
+        </div>
     </div>
+    <br>
+
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_libros/listarLibro.html">libros</a>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_prestamos/listaPrestamo.html">préstamos</a>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_multas/listadoMultas.html">Multas</a>
+        </div>
+    </div>
+</div>
 
     <!-- Contenido principal -->
     <div class="container mt-4" style="margin-left: 250px;">
@@ -35,8 +66,8 @@
 
         <!-- Fin Search -->
 
-        <a href="./crearMulta.html" class="btn btn-primary mb-3">Agregar nueva Multa</a>
-        <table class="table table-striped">
+        <a href="./crearMulta.html" class="btn boton-elegante mb-3">Agregar nueva Multa</a>
+        <table class="table  table-dark">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -55,54 +86,52 @@
         </table>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Editar Multa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editar-libro-form">
-                        <h5 class="modal-title" id="staticBackdropLabel">Aquí podrás ver los detalles y editar la
-                            información de la multa</h5>
-                        <br>
-                        <div class="mb-3">
-                            <label for="usuarioSelect">Usuario multado</label>
-                            <select id="usuarioSelect" class="form-select">
-                                <option value="" selected disabled>Seleccione un usuario</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="prestamoSelect">Prestamo</label>
-                            <select id="prestamoSelect" class="form-select">
-                                <option value="" selected disabled>Seleccione un usuario</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="valor_multa">Valor de la multa</label>
-                            <input type="number" id="valor_multa" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="fecha_multa">Fecha de Préstamo</label>
-                            <input type="date" id="fecha_multa" class="form-control">
-                        </div>
-                        <div class="mb-3">
-                            <label for="estado">Estado</label>
-                            <select id="estado" class="form-select">
-                                <option value="" selected disabled>Seleccione una opción</option>
-                                <option value="pendiente">pendiente</option>
-                                <option value="pagado">pagado</option>
-                            </select>
-                        </div>
-                        <button type="button" class="btn btn-primary" id="guardar-cambios">Guardar cambios</button>
-                    </form>
-                </div>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Editar Multa</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editar-multa-form">
+                    <h5 class="modal-title mb-3" id="staticBackdropLabel">Aquí podrás ver los detalles y editar la información de la multa</h5>
+                    <div class="form-group">
+                        <label for="usuarioSelect" class="form-label">Usuario multado</label>
+                        <select id="usuarioSelect" class="form-select">
+                            <option value="" selected disabled>Seleccione un usuario</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prestamoSelect" class="form-label">Préstamo asociado</label>
+                        <select id="prestamoSelect" class="form-select">
+                            <option value="" selected disabled>Seleccione un préstamo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor_multa" class="form-label">Valor de la multa</label>
+                        <input type="number" id="valor_multa" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha_multa" class="form-label">Fecha de la multa</label>
+                        <input type="date" id="fecha_multa" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="estado" class="form-label">Estado de la multa</label>
+                        <select id="estado" class="form-select">
+                            <option value="" selected disabled>Seleccione el estado</option>
+                            <option value="pendiente">Pendiente</option>
+                            <option value="pagado">Pagado</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="guardar-cambios">Guardar cambios</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

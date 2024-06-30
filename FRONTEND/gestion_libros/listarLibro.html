@@ -6,16 +6,49 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../estilos_globales/search.css">
     <link rel="stylesheet" href="../estilos_globales/sidebar.css">
+    <link rel="stylesheet" href="../estilos_globales/listado.css">
+    <link rel="stylesheet" href="../estilos_globales/boton_elegante.css">
+    <link rel="stylesheet" href="../estilos_globales/boton_editar.css">
+    <link rel="stylesheet" href="../estilos_globales/boton_garbaje.css">
+    <link rel="stylesheet" href="../estilos_globales/modal.css">
     <title>Listar Libros</title>
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="#">Libros</a>
-        <a href="#">Usuarios</a>
-        <a href="#">Préstamos</a>
-        <a href="#">Multas</a>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2 style="color: white;" >Biblio admin</h2>
+    <br>
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_usuarios/listaUsuarios.html">usuarios</a>
+        </div>
     </div>
+    <br>
+
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_libros/listarLibro.html">libros</a>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_prestamos/listaPrestamo.html">préstamos</a>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="enlace">
+        <div class="boton_enlace">
+            <a href="../gestion_multas/listadoMultas.html">Multas</a>
+        </div>
+    </div>
+</div>
+
 
     <!-- Contenido principal -->
     <div class="container mt-4" style="margin-left: 250px;">
@@ -31,75 +64,81 @@
 
         <!-- Fin Search -->
 
-        <a href="./crearLibro.html" class="btn btn-primary mb-3">Agregar nuevo libro</a>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>ISBN</th>
-                    <th>Género</th>
-                    <th>Ejemplares Disponibles</th>
-                    <th>Ejemplares Ocupados</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody id="libros-lista">
-                <!-- Aquí se insertarán las filas de los libros -->
-            </tbody>
-        </table>
-    </div>
+        <a href="./crearlibro.html" class="btn boton-elegante mb-3">Agregar nuevo libro</a>
 
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Editar Libro</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editar-libro-form">
-                        <h5 class="modal-title" id="staticBackdropLabel">Aquí podrás ver los detalles y editar la información del libro</h5>
-                        <br>
-                        <div class="mb-3">
-                            <label for="editar-titulo" class="form-label">Título</label>
-                            <input type="text" class="form-control" id="editar-titulo">
-                            <div class="invalid-feedback">Por favor ingrese el título.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editar-autor" class="form-label">Autor</label>
-                            <input type="text" class="form-control" id="editar-autor">
-                            <div class="invalid-feedback">Por favor ingrese el autor.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editar-isbn" class="form-label">ISBN</label>
-                            <input type="text" class="form-control" id="editar-isbn">
-                            <div class="invalid-feedback">Por favor ingrese el ISBN.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editar-genero" class="form-label">Género</label>
-                            <input type="text" class="form-control" id="editar-genero">
-                            <div class="invalid-feedback">Por favor ingrese el género.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editar-num_ejem_dis" class="form-label">Ejemplares Disponibles</label>
-                            <input type="number" class="form-control" id="editar-num_ejem_dis">
-                            <div class="invalid-feedback">Por favor ingrese el número de ejemplares disponibles.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="editar-num_ejem_ocup" class="form-label">Ejemplares Ocupados</label>
-                            <input type="number" class="form-control" id="editar-num_ejem_ocup">
-                            <div class="invalid-feedback">Por favor ingrese el número de ejemplares ocupados.</div>
-                        </div>
-                        <button type="button" class="btn btn-primary" id="guardar-cambios">Guardar cambios</button>
-                    </form>
-                </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-dark">
+                    <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Título</th>
+                            <th class="text-center">Autor</th>
+                            <th class="text-center">ISBN</th>
+                            <th class="text-center">Género</th>
+                            <th class="text-center">Ejemplares Disponibles</th>
+                            <th class="text-center">Ejemplares Ocupados</th>
+                            <th class="text-center">Editar</th>
+                            <th class="text-center">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="libros-lista">
+                        <!-- Aquí se insertarán las filas de los usuarios -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Editar Libro</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editar-libro-form">
+                    <h5 class="modal-title mb-3" id="staticBackdropLabel">Aquí podrás ver los detalles y editar la información del libro</h5>
+                    <div class="form-group">
+                        <label for="editar-titulo" class="form-label">Título de libro</label>
+                        <input type="text" class="form-control" id="editar-titulo">
+                        <div class="invalid-feedback">Por favor ingrese el título del libro.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editar-autor" class="form-label">Nombre del autor</label>
+                        <input type="text" class="form-control" id="editar-autor">
+                        <div class="invalid-feedback">Por favor ingrese el nombre del autor.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editar-isbn" class="form-label">ISBN del libro</label>
+                        <input type="text" class="form-control" id="editar-isbn">
+                        <div class="invalid-feedback">Por favor ingrese el ISBN del libro.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editar-genero" class="form-label">Género literario</label>
+                        <input type="text" class="form-control" id="editar-genero">
+                        <div class="invalid-feedback">Por favor ingrese el género literario del libro.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editar-num_ejem_dis" class="form-label">Número de ejemplares disponibles</label>
+                        <input type="number" class="form-control" id="editar-num_ejem_dis">
+                        <div class="invalid-feedback">Por favor ingrese el número de ejemplares disponibles.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editar-num_ejem_ocup" class="form-label">Número de ejemplares prestados</label>
+                        <input type="number" class="form-control" id="editar-num_ejem_ocup">
+                        <div class="invalid-feedback">Por favor ingrese el número de ejemplares prestados.</div>
+                    </div>
+                    <button type="button" class="form-submit-btn" id="guardar-cambios" style="color: white;">Guardar cambios</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
