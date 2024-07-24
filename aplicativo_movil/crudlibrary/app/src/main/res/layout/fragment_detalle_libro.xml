@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".detalleLibro">
+
+    <LinearLayout
+        android:layout_width="437dp"
+        android:layout_height="740dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lbltitulo"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:text="Titulo"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/lblautor"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Autor"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/lblgenero"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:text="Genero"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/lblcod_isbn"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Isbn"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/lblcant_disp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Cantidad disponible"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/lblcant_ocup"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="Cantidad ocupada"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Editar" />
+
+            <Button
+                android:id="@+id/btnEliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Eliminar" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">crudlibrary</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lblTitulo">Título</string>
+    <string name="lblAutor">Autor</string>
+    <string name="lblGenero">Genero</string>
+    <string name="lblCodigoISBN">Codigo ISBN</string>
+    <string name="lblLibrosDisponibles">Libros Disponibles</string>
+    <string name="lblLibrosOcupados">Libros Ocupados</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="btnVolver">Volver</string>
+</resources>
