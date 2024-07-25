@@ -1,59 +1,65 @@
 package com.example.crudlibrary
 
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.RequestQueue
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonArrayRequest
+import com.android.volley.toolbox.Volley
+import com.example.crudlibrary.adapters.LibroAdapter
+import com.example.crudlibrary.config.config.Companion.urlLibro
+import com.example.crudlibrary.models.libro
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class listalibro : AppCompatActivity() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [listaLibro.newInstance] factory method to
- * create an instance of this fragment.
- */
-class listaLibro : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var libroAdapter: LibroAdapter
+    private lateinit var libros: MutableList<libro>
+    private lateinit var requestQueue: RequestQueue
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        setContentView(R.layout.listalibro)
+
+        recyclerView = findViewById(R.id.recyclerViewLibros)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        libros = mutableListOf()
+        libroAdapter = LibroAdapter(this, libros) // Cambia el orden de los parámetros aquí
+        recyclerView.adapter = libroAdapter
+
+        requestQueue = Volley.newRequestQueue(this)
+        fetchLibros()
+
+        val btnAtras: Button = findViewById(R.id.btnAtras)
+        btnAtras.setOnClickListener {
+            finish()
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_libro, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment listaLibro.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            listaLibro().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun fetchLibros() {
+        val jsonArrayRequest = JsonArrayRequest(
+            Request.Method.GET, urlLibro, null,
+            Response.Listener { response ->
+                val gson = Gson()
+                val librosListType = object : TypeToken<List<libro>>() {}.type
+                val librosList: List<libro> = gson.fromJson(response.toString(), librosListType)
+                libros.clear()
+                libros.addAll(librosList)
+                libroAdapter.notifyDataSetChanged()
+            },
+            Response.ErrorListener { error ->
+                Toast.makeText(this, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
             }
+        )
+        requestQueue.add(jsonArrayRequest)
     }
 }
