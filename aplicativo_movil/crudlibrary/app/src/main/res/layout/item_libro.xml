@@ -3,72 +3,36 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="50dp">
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Título"
-        android:textSize="18sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/autor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Autor"
-        android:textSize="16sp" />
+        android:text="Autor" />
 
     <TextView
         android:id="@+id/isbn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Isbn"
-        android:textSize="16sp" />
+        android:text="ISBN" />
 
     <TextView
         android:id="@+id/genero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Genero"
-        android:textSize="16sp" />
+        android:text="Género" />
 
-    <TextView
-        android:id="@+id/num_ejem_dis"
+    <Button
+        android:id="@+id/btnEditar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Num_ejem_dis"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/num_ejem_ocup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Num_ejem_ocup"
-        android:textSize="16sp" />
-
-
-    <LinearLayout
-        android:layout_width="238dp"
-        android:layout_height="95dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnEditar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20px"
-            android:layout_weight="1"
-            android:text="Editar" />
-
-        <Button
-            android:id="@+id/btnEliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20px"
-            android:layout_weight="1"
-            android:text="Eliminar" />
-    </LinearLayout>
-
+        android:text="Editar" />
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.crudlibrary
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -33,7 +34,7 @@ class listalibro : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         libros = mutableListOf()
-        libroAdapter = LibroAdapter(this, libros) // Cambia el orden de los parámetros aquí
+        libroAdapter = LibroAdapter(this, libros)
         recyclerView.adapter = libroAdapter
 
         requestQueue = Volley.newRequestQueue(this)
@@ -43,6 +44,17 @@ class listalibro : AppCompatActivity() {
         btnAtras.setOnClickListener {
             finish()
         }
+
+
+        val btnLibros: Button = findViewById(R.id.btnCrearLibro)
+        btnLibros.setOnClickListener {
+            val intent = Intent(this, guardarLibro::class.java)
+            startActivity(intent)
+        }
+
+
+
+
     }
 
     private fun fetchLibros() {

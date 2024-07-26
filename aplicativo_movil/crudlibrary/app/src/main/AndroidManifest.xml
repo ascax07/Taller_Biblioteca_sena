@@ -28,6 +28,9 @@
         <activity
             android:name=".listalibro"
             android:exported="false" /> <!-- Exported debe ser false para actividades internas -->
+        <activity android:name=".detalleLibro"></activity>
+
+        <activity android:name=".guardarLibro"></activity>
 
     </application>
 </manifest>

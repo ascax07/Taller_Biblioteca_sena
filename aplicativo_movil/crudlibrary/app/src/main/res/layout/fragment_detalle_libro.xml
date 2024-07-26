@@ -1,80 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".detalleLibro">
 
+    <!-- Tus otros elementos de diseño -->
+
+    <EditText
+        android:id="@+id/lblautor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Autor"
+        android:layout_marginTop="16dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/lbltitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título"
+        android:layout_below="@id/lblautor"
+        android:layout_marginTop="16dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/lblgenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Género"
+        android:layout_below="@id/lbltitulo"
+        android:layout_marginTop="16dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/lblcod_isbn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ISBN"
+        android:layout_below="@id/lblgenero"
+        android:layout_marginTop="16dp"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/lblcant_dis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad Disponible"
+        android:layout_below="@id/lblcod_isbn"
+        android:layout_marginTop="16dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/lblcant_ocup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad Ocupada"
+        android:layout_below="@id/lblcant_dis"
+        android:layout_marginTop="16dp"
+        android:inputType="number" />
+
+    <!-- LinearLayout para los botones -->
     <LinearLayout
-        android:layout_width="437dp"
-        android:layout_height="740dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="60dp"
-        android:background="@color/white"
-        android:orientation="vertical">
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblcant_ocup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/lbltitulo"
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:text="Titulo"
-            android:textColor="@color/black" />
+        <Button
+            android:id="@+id/btnAtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Atrás" />
 
-        <TextView
-            android:id="@+id/lblautor"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Autor"
-            android:textColor="@color/black" />
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Guardar" />
 
-        <TextView
-            android:id="@+id/lblgenero"
-            android:layout_width="match_parent"
-            android:layout_height="49dp"
-            android:text="Genero"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/lblcod_isbn"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:text="Isbn"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/lblcant_disp"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Cantidad disponible"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/lblcant_ocup"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:text="Cantidad ocupada"
-            android:textColor="@color/black" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="67dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnEditar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Editar" />
-
-            <Button
-                android:id="@+id/btnEliminar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Eliminar" />
-        </LinearLayout>
 
     </LinearLayout>
-</FrameLayout>
+
+</RelativeLayout>
