@@ -32,5 +32,13 @@
 
         <activity android:name=".guardarLibro"></activity>
 
+        <activity
+            android:name=".lista_usuario"
+            android:exported="false" />
+
+        <activity android:name=".detalle_usuario"></activity>
+
+        <activity android:name=".guardar_usuario"></activity>
+
     </application>
 </manifest>

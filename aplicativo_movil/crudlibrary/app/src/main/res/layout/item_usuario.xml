@@ -8,72 +8,79 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Título"
+        android:text="Nombre"
         android:textSize="16sp"
         android:textStyle="bold" />
+
     <TextView
-        android:id="@+id/titulo"
+        android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Título" />
+        android:text="Nombre" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Autor"
+        android:text="Dirección"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
 
     <TextView
-        android:id="@+id/autor"
+        android:id="@+id/direccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Autor" />
+        android:text="Dirección" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ISBN"
+        android:text="Correo Electrónico"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
 
     <TextView
-        android:id="@+id/isbn"
+        android:id="@+id/correo_electronico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ISBN" />
+        android:text="Correo Electrónico" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Género"
+        android:text="Tipo de Usuario"
         android:textSize="16sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
+
+
 
     <TextView
-        android:id="@+id/genero"
+        android:id="@+id/tipo_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Género" />
+        android:text="Tipo de Usuario" />
 
     <LinearLayout
-        android:layout_width="385dp"
-        android:layout_height="67dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
 
         <Button
             android:id="@+id/btnEditar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Editar" />
+            android:text="Editar"
+            android:contentDescription="Botón para editar el usuario" />
 
         <Button
             android:id="@+id/btnEliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Eliminar" />
-
+            android:text="Eliminar"
+            android:contentDescription="Botón para eliminar el usuario"
+            android:layout_marginStart="16dp"/>
     </LinearLayout>
-
 
 </LinearLayout>

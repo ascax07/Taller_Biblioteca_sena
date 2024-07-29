@@ -17,45 +17,45 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.crudlibrary.R
 import com.example.crudlibrary.config.config
-import com.example.crudlibrary.detalleLibro
-import com.example.crudlibrary.models.libro
+import com.example.crudlibrary.views.usuario.detalle_usuario
+import com.example.crudlibrary.models.usuario
 
-class LibroAdapter(private val context: Context, private val libros: MutableList<libro>) :
-    RecyclerView.Adapter<LibroAdapter.LibroViewHolder>() {
+class UsuarioAdapter(private val context: Context, private val usuario: MutableList<usuario>) :
+    RecyclerView.Adapter<UsuarioAdapter.usuarioViewHolder>() {
 
     private val requestQueue: RequestQueue = Volley.newRequestQueue(context)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LibroViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.item_libro, parent, false)
-        return LibroViewHolder(view)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): usuarioViewHolder {
+        val view = LayoutInflater.from(context).inflate(R.layout.item_usuario, parent, false)
+        return usuarioViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: LibroViewHolder, position: Int) {
-        val libro = libros[position]
-        holder.bind(libro, position)
+    override fun onBindViewHolder(holder: usuarioViewHolder, position: Int) {
+        val usuario = usuario[position]
+        holder.bind(usuario, position)
     }
 
     override fun getItemCount(): Int {
-        return libros.size
+        return usuario.size
     }
 
-    inner class LibroViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val titulo: TextView = itemView.findViewById(R.id.titulo)
-        private val autor: TextView = itemView.findViewById(R.id.autor)
-        private val isbn: TextView = itemView.findViewById(R.id.isbn)
-        private val genero: TextView = itemView.findViewById(R.id.genero)
+    inner class usuarioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val nombre: TextView = itemView.findViewById(R.id.titulo)
+        private val direccion: TextView = itemView.findViewById(R.id.autor)
+        private val correo_electronico: TextView = itemView.findViewById(R.id.isbn)
+        private val tipo_usuario: TextView = itemView.findViewById(R.id.genero)
         private val btnEditar: Button = itemView.findViewById(R.id.btnEditar)
         private val btnEliminar: Button = itemView.findViewById(R.id.btnEliminar)
 
-        fun bind(libro: libro, position: Int) {
-            titulo.text = libro.titulo
-            autor.text = libro.autor
-            isbn.text = libro.isbn
-            genero.text = libro.genero
+        fun bind(usuario: usuario, position: Int) {
+            nombre.text = usuario.nombre
+            direccion.text = usuario.direccion
+            correo_electronico.text = usuario.correo_electronico
+            tipo_usuario.text = usuario.tipo_usuario
 
             btnEditar.setOnClickListener {
-                val intent = Intent(context, detalleLibro::class.java)
-                intent.putExtra("ID_LIBRO", libro.id)
+                val intent = Intent(context, detalle_usuario::class.java)
+                intent.putExtra("ID_LIBRO", usuario.id)
                 context.startActivity(intent)
             }
 
@@ -64,7 +64,7 @@ class LibroAdapter(private val context: Context, private val libros: MutableList
                     setTitle("Confirmación")
                     setMessage("¿Estás seguro que quieres eliminar este libro?")
                     setPositiveButton("Sí") { dialog, _ ->
-                        eliminarLibro(libro.id, position)
+                        eliminarLibro(usuario.id, position)
                         dialog.dismiss()
                     }
                     setNegativeButton("No") { dialog, _ ->
@@ -83,12 +83,12 @@ class LibroAdapter(private val context: Context, private val libros: MutableList
             Request.Method.DELETE,
             url,
             Response.Listener {
-                libros.removeAt(position)
+                usuario.removeAt(position)
                 notifyItemRemoved(position)
-                Toast.makeText(context, "Libro eliminado", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "usuario eliminado", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener {
-                Toast.makeText(context, "Error al eliminar el libro", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Error al eliminar el usuario", Toast.LENGTH_SHORT).show()
             }
         )
 

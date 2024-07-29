@@ -3,126 +3,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".detalleLibro">
+    tools:context=".detalle_usuario">
 
     <TextView
-        android:id="@+id/tvAutor"
+        android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Autor"
+        android:text="Nombre"
         android:layout_marginTop="16dp"
         android:textStyle="bold"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/lblautor"
+        android:id="@+id/lblnombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Autor"
-        android:layout_below="@id/tvAutor"
+        android:hint="Nombre"
+        android:layout_below="@id/tvNombre"
         android:layout_marginTop="4dp"
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/tvTitulo"
+        android:id="@+id/tvDireccion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Título"
+        android:text="Dirección"
         android:textStyle="bold"
-        android:layout_below="@id/lblautor"
+        android:layout_below="@id/lblnombre"
         android:layout_marginTop="16dp"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/lbltitulo"
+        android:id="@+id/lbldireccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título"
-        android:layout_below="@id/tvTitulo"
+        android:hint="Dirección"
+        android:layout_below="@id/tvDireccion"
         android:layout_marginTop="4dp"
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/tvGenero"
+        android:id="@+id/tvCorreoElectronico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Género"
+        android:text="Correo Electrónico"
         android:textStyle="bold"
-        android:layout_below="@id/lbltitulo"
+        android:layout_below="@id/lbldireccion"
         android:layout_marginTop="16dp"
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/lblgenero"
+        android:id="@+id/lblcorreo_electronico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Género"
-        android:layout_below="@id/tvGenero"
+        android:hint="Correo Electrónico"
+        android:layout_below="@id/tvCorreoElectronico"
+        android:layout_marginTop="4dp"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/tvTipoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de Usuario"
+        android:textStyle="bold"
+        android:layout_below="@id/lblcorreo_electronico"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/lbltipo_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo de Usuario"
+        android:layout_below="@id/tvTipoUsuario"
         android:layout_marginTop="4dp"
         android:inputType="text" />
-
-    <TextView
-        android:id="@+id/tvIsbn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ISBN"
-        android:textStyle="bold"
-        android:layout_below="@id/lblgenero"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/lblcod_isbn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ISBN"
-        android:layout_below="@id/tvIsbn"
-        android:layout_marginTop="4dp"
-        android:inputType="text" />
-
-    <TextView
-        android:id="@+id/tvCantDis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cantidad Disponible"
-        android:textStyle="bold"
-        android:layout_below="@id/lblcod_isbn"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/lblcant_dis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cantidad Disponible"
-        android:layout_below="@id/tvCantDis"
-        android:layout_marginTop="4dp"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/tvCantOcup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cantidad Ocupada"
-        android:textStyle="bold"
-        android:layout_below="@id/lblcant_dis"
-        android:layout_marginTop="16dp"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/lblcant_ocup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Cantidad Ocupada"
-        android:layout_below="@id/tvCantOcup"
-        android:layout_marginTop="4dp"
-        android:inputType="number" />
 
     <!-- LinearLayout para los botones -->
     <LinearLayout
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lblcant_ocup"
+        android:layout_below="@id/lbltipo_usuario"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:orientation="horizontal">

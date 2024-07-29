@@ -6,9 +6,11 @@ class config {
     instanciar metodo compain object para almacenar las variables stattic
      */
 
-    companion object{
-        val urlBase="http://192.168.0.7:8080/api/v1/"
-        val urlLibro = urlBase+"libro/"
+    companion object {
+        val urlBase = "http://192.168.100.8:8080/api/v1/"
+        val urlLibro = urlBase + "libro/"
+
+        val urlUsuario = urlBase + "usuario/"
 
 
     }
