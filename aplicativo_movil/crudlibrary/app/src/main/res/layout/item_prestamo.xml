@@ -5,61 +5,61 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/nombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nombre" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dirección"
+        android:text="Fecha de Préstamo"
         android:textSize="16sp"
         android:textStyle="bold" />
 
 
     <TextView
-        android:id="@+id/direccion"
+        android:id="@+id/fecha_prestamo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dirección" />
+        android:text="Fecha de Préstamo" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correo Electrónico"
+        android:text="Fecha de Devolución"
         android:textSize="16sp"
         android:textStyle="bold" />
 
-
     <TextView
-        android:id="@+id/correo_electronico"
+        android:id="@+id/fecha_devolucion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Correo Electrónico" />
+        android:text="Fecha de Devolución" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tipo de Usuario"
+        android:text="Usuario del Préstamo"
         android:textSize="16sp"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario del Préstamo" />
 
 
     <TextView
-        android:id="@+id/tipo_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tipo de Usuario" />
+        android:text="Libro"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/libro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Libro" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,14 +72,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Editar"
-            android:contentDescription="Botón para editar el usuario" />
+            android:contentDescription="Botón para editar el préstamo" />
 
         <Button
             android:id="@+id/btnEliminar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Eliminar"
-            android:contentDescription="Botón para eliminar el usuario"
+            android:contentDescription="Botón para eliminar el préstamo"
             android:layout_marginStart="16dp"/>
     </LinearLayout>
 

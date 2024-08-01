@@ -10,52 +10,52 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textNombre"
+            android:id="@+id/textFechaPrestamo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre" />
+            android:text="Fecha de Préstamo" />
 
         <EditText
-            android:id="@+id/txt_nombre"
+            android:id="@+id/txt_fecha_prestamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/textFechaDevolucion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Devolución" />
+
+        <EditText
+            android:id="@+id/txt_fecha_devolucion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/textUsuarioPrestamo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Usuario del Préstamo" />
+
+        <EditText
+            android:id="@+id/txt_usuario_prestamo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text" />
 
         <TextView
-            android:id="@+id/textDireccion"
+            android:id="@+id/textLibro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dirección" />
+            android:text="Libro" />
 
         <EditText
-            android:id="@+id/txt_direccion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text" />
-
-        <TextView
-            android:id="@+id/textCorreoElectronico"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Correo Electrónico" />
-
-        <EditText
-            android:id="@+id/txt_correo_electronico"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
-
-        <TextView
-            android:id="@+id/textTipoUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tipo de Usuario" />
-
-        <EditText
-            android:id="@+id/txt_tipo_usuario"
+            android:id="@+id/txt_libro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -63,24 +63,24 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="16dp">
+            android:layout_height="105dp"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnVolver"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Volver" />
 
             <Button
                 android:id="@+id/btnGuardar"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Guardar" />
         </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

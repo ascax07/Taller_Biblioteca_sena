@@ -1,6 +1,5 @@
 package com.example.crudlibrary
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -19,7 +18,7 @@ import com.example.crudlibrary.models.usuario
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 
-class lista_usuario : AppCompatActivity() {
+class listausuario : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var UsuarioAdapter: UsuarioAdapter
@@ -57,6 +56,7 @@ class lista_usuario : AppCompatActivity() {
 
     }
 
+
     private fun fetchUsuarios() {
         val jsonArrayRequest = JsonArrayRequest(
             Request.Method.GET, urlUsuario, null,
@@ -74,4 +74,6 @@ class lista_usuario : AppCompatActivity() {
         )
         requestQueue.add(jsonArrayRequest)
     }
+
+
 }

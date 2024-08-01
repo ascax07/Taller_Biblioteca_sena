@@ -26,4 +26,15 @@
         app:layout_constraintStart_toStartOf="@+id/btnLibros"
         app:layout_constraintTop_toBottomOf="@+id/btnLibros" />
 
+    <Button
+        android:id="@+id/btnPrestamos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="Prestamos"
+        app:layout_constraintEnd_toEndOf="@+id/btnUsuarios"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="@+id/btnUsuarios"
+        app:layout_constraintTop_toBottomOf="@+id/btnUsuarios" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

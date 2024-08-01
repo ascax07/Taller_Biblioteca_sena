@@ -33,12 +33,23 @@
         <activity android:name=".guardarLibro"></activity>
 
         <activity
-            android:name=".lista_usuario"
-            android:exported="false" />
+            android:name=".listausuario"
+            android:exported="false" /> <!-- Exported debe ser false para actividades internas -->
 
         <activity android:name=".detalle_usuario"></activity>
 
         <activity android:name=".guardar_usuario"></activity>
+
+
+        <activity
+            android:name=".listaprestamo"
+            android:exported="false" />
+
+        <activity android:name=".detalle_prestamo"></activity>
+
+        <activity android:name=".guardar_prestamo"></activity>
+
+
 
     </application>
 </manifest>

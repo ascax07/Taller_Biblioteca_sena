@@ -17,7 +17,7 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.example.crudlibrary.R
 import com.example.crudlibrary.config.config
-import com.example.crudlibrary.views.usuario.detalle_usuario
+import com.example.crudlibrary.detalle_usuario
 import com.example.crudlibrary.models.usuario
 
 class UsuarioAdapter(private val context: Context, private val usuario: MutableList<usuario>) :
@@ -40,10 +40,10 @@ class UsuarioAdapter(private val context: Context, private val usuario: MutableL
     }
 
     inner class usuarioViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nombre: TextView = itemView.findViewById(R.id.titulo)
-        private val direccion: TextView = itemView.findViewById(R.id.autor)
-        private val correo_electronico: TextView = itemView.findViewById(R.id.isbn)
-        private val tipo_usuario: TextView = itemView.findViewById(R.id.genero)
+        private val nombre: TextView = itemView.findViewById(R.id.nombre)
+        private val direccion: TextView = itemView.findViewById(R.id.direccion)
+        private val correo_electronico: TextView = itemView.findViewById(R.id.correo_electronico)
+        private val tipo_usuario: TextView = itemView.findViewById(R.id.tipo_usuario)
         private val btnEditar: Button = itemView.findViewById(R.id.btnEditar)
         private val btnEliminar: Button = itemView.findViewById(R.id.btnEliminar)
 
@@ -55,7 +55,7 @@ class UsuarioAdapter(private val context: Context, private val usuario: MutableL
 
             btnEditar.setOnClickListener {
                 val intent = Intent(context, detalle_usuario::class.java)
-                intent.putExtra("ID_LIBRO", usuario.id)
+                intent.putExtra("ID_USUARIO", usuario.id)
                 context.startActivity(intent)
             }
 
@@ -95,4 +95,3 @@ class UsuarioAdapter(private val context: Context, private val usuario: MutableL
         requestQueue.add(request)
     }
 }
-

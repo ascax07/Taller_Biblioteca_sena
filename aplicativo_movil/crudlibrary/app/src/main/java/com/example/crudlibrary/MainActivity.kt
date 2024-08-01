@@ -6,8 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import com.example.crudlibrary.listalibro
-import com.example.crudlibrary.lista_usuario
+
 
 
 
@@ -23,8 +22,14 @@ class MainActivity : AppCompatActivity() {
         }
 
         val btnUsuarios: Button = findViewById(R.id.btnUsuarios)
-        btnLibros.setOnClickListener {
-            val intent = Intent(this, lista_usuario::class.java)
+        btnUsuarios.setOnClickListener {
+            val intent = Intent(this, listausuario::class.java)
+            startActivity(intent)
+        }
+
+        val btnPrestamos: Button = findViewById(R.id.btnPrestamos)
+        btnPrestamos.setOnClickListener {
+            val intent = Intent(this, listaprestamo::class.java)
             startActivity(intent)
         }
     }
