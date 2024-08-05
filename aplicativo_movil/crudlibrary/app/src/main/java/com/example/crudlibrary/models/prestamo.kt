@@ -7,7 +7,8 @@ class prestamo (
     var  fecha_prestamo:String,
     var  fecha_devolucion:String,
     val usuario:usuario,
-    val libro:libro
+    val libro:libro,
+    var estado:String
 )
 
 

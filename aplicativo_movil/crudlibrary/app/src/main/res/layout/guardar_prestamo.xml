@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date" />
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/textFechaDevolucion"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="date" />
+            android:inputType="text" />
 
         <TextView
             android:id="@+id/textUsuarioPrestamo"
@@ -41,12 +41,12 @@
             android:layout_height="wrap_content"
             android:text="Usuario del Préstamo" />
 
-        <EditText
-            android:id="@+id/txt_usuario_prestamo"
+        <Spinner
+            android:id="@+id/spinner_usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text" />
+            android:spinnerMode="dropdown"
+            android:prompt="@string/prompt_selecciona_usuario"/>
 
         <TextView
             android:id="@+id/textLibro"
@@ -54,11 +54,23 @@
             android:layout_height="wrap_content"
             android:text="Libro" />
 
-        <EditText
-            android:id="@+id/txt_libro"
+        <Spinner
+            android:id="@+id/spinner_libro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:spinnerMode="dropdown"
+            android:prompt="@string/prompt_selecciona_libro"/>
+
+        <TextView
+            android:id="@+id/textEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="estado del prestamo" />
+
+        <EditText
+            android:id="@+id/txt_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:inputType="text" />
 
         <LinearLayout

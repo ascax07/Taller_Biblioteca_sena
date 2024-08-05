@@ -10,4 +10,7 @@
     <string name="lblLibrosOcupados">Libros Ocupados</string>
     <string name="btnGuardar">Guardar</string>
     <string name="btnVolver">Volver</string>
+
+    <string name="prompt_selecciona_usuario">Selecciona un Usuario</string>
+    <string name="prompt_selecciona_libro">Selecciona un Libro</string>
 </resources>

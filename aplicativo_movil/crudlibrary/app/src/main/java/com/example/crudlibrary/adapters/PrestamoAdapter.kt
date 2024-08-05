@@ -39,19 +39,23 @@ class PrestamoAdapter(private val context: Context, private val prestamos: Mutab
     }
 
     inner class PrestamoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val fechaPrestamo: TextView = itemView.findViewById(R.id.fecha_prestamo)
-        private val fechaDevolucion: TextView = itemView.findViewById(R.id.fecha_devolucion)
+        private val id: TextView = itemView.findViewById(R.id.id)
+        private val fecha_prestamo: TextView = itemView.findViewById(R.id.fecha_prestamo)
+        private val fecha_devolucion: TextView = itemView.findViewById(R.id.fecha_devolucion)
         private val usuario: TextView = itemView.findViewById(R.id.usuario)
         private val libro: TextView = itemView.findViewById(R.id.libro)
+        private val estado: TextView = itemView.findViewById(R.id.estado)
+
         private val btnEditar: Button = itemView.findViewById(R.id.btnEditar)
         private val btnEliminar: Button = itemView.findViewById(R.id.btnEliminar)
 
         fun bind(prestamo: prestamo) {
-            fechaPrestamo.text = prestamo.fecha_prestamo
-            fechaDevolucion.text = prestamo.fecha_devolucion
+            id.text = prestamo.id
+            fecha_prestamo.text = prestamo.fecha_prestamo
+            fecha_devolucion.text = prestamo.fecha_devolucion
             usuario.text = "${prestamo.usuario.nombre} ${prestamo.usuario.correo_electronico}" // Concatenar el nombre y correo del usuario
             libro.text = "${prestamo.libro.titulo} ${prestamo.libro.isbn}" // Concatenar el titulo y ISBN del libro
-
+            estado.text = prestamo.estado
 
             btnEditar.setOnClickListener {
                 val intent = Intent(context, detalle_prestamo::class.java)
@@ -88,7 +92,7 @@ class PrestamoAdapter(private val context: Context, private val prestamos: Mutab
                 Toast.makeText(context, "Préstamo eliminado", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener {
-                Toast.makeText(context, "Error al eliminar el préstamo", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "No se puede eliminar el préstamo, ya que tiene una multa asociada", Toast.LENGTH_SHORT).show()
             }
         )
 

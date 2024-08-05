@@ -5,7 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".detalle_prestamo">
 
-    <!-- Tus otros elementos de diseño -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID del prestamo"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/lblid"
@@ -15,14 +20,30 @@
         android:layout_marginTop="16dp"
         android:inputType="text" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Préstamo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/lblid" />
+
     <EditText
         android:id="@+id/lblfecha_prestamo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Fecha de Préstamo"
         android:layout_below="@id/lblid"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         android:inputType="date" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Devolución"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/lblfecha_prestamo" />
 
     <EditText
         android:id="@+id/lblfecha_devolucion"
@@ -30,49 +51,75 @@
         android:layout_height="wrap_content"
         android:hint="Fecha de Devolución"
         android:layout_below="@id/lblfecha_prestamo"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         android:inputType="date" />
 
-    <EditText
-        android:id="@+id/lblusuario_prestamo"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario del Préstamo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/lblfecha_devolucion" />
+
+    <Spinner
+        android:id="@+id/spinnerUsuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usuario del Préstamo"
         android:layout_below="@id/lblfecha_devolucion"
-        android:layout_marginTop="16dp"
-        android:inputType="text" />
+        android:layout_marginTop="18dp" />
 
-    <EditText
-        android:id="@+id/lbllibro"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Libro del Préstamo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/spinnerUsuario" />
+
+    <Spinner
+        android:id="@+id/spinnerLibro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Libro"
-        android:layout_below="@id/lblusuario_prestamo"
-        android:layout_marginTop="16dp"
+        android:layout_below="@id/spinnerUsuario"
+        android:layout_marginTop="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estado"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/spinnerLibro" />
+
+    <EditText
+        android:id="@+id/lblestado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Estado"
+        android:layout_below="@id/spinnerLibro"
+        android:layout_marginTop="18dp"
         android:inputType="text" />
 
-    <!-- LinearLayout para los botones -->
     <LinearLayout
-        android:layout_width="220dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lbllibro"
+        android:layout_below="@id/lblestado"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="18dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnAtras"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
             android:text="Atrás" />
 
         <Button
             android:id="@+id/btnGuardar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
             android:text="Guardar" />
 
     </LinearLayout>
