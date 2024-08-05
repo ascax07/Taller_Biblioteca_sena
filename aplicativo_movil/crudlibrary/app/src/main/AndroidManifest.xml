@@ -49,6 +49,14 @@
 
         <activity android:name=".guardar_prestamo"></activity>
 
+        <activity
+            android:name=".listamulta"
+            android:exported="false" />
+
+        <activity android:name=".detalle_multa"></activity>
+
+        <activity android:name=".guardar_multa"></activity>
+
 
 
     </application>

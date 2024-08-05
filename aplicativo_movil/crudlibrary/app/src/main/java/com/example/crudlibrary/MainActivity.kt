@@ -32,5 +32,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, listaprestamo::class.java)
             startActivity(intent)
         }
+
+        val btnMultas: Button = findViewById(R.id.btnMultas)
+        btnMultas.setOnClickListener {
+            val intent = Intent(this, listamulta::class.java)
+            startActivity(intent)
+        }
     }
 }

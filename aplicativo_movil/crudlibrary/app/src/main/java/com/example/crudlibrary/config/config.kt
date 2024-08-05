@@ -14,6 +14,8 @@ class config {
 
         val urlPrestamo = urlBase+"prestamo/"
 
+        val urlMulta = urlBase+"multas/"
+
 
 
     }
