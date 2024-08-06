@@ -288,7 +288,7 @@ function cargarListaUsuarios() {
             data.forEach(function (usuario) {
                 var option = $("<option></option>")
                     .val(usuario.id)
-                    .text(usuario.id);
+                    .text(usuario.id + " - " + usuario.correo_electronico);
                 usuarioSelect.append(option);
             });
         },
