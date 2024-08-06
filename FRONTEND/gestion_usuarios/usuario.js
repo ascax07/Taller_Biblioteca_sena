@@ -3,35 +3,41 @@ var url = "http://localhost:8080/api/v1/usuario/";
 
 addEventListener("keypress", soloLetras);
 
-
 /*
-este metodo solo permite letras
+Este método solo permite letras, números, espacios, letras con tildes, punto y coma.
 */
 
-
-
 function soloLetras(event) {
-    console.log("tecla presionada: " + event.key);
-    console.log("código de tecla: " + event.keyCode);
+    console.log("Tecla presionada: " + event.key);
+    console.log("Código de tecla: " + event.keyCode);
 
     // Obtener el código de la tecla presionada
     var codigoTecla = event.keyCode || event.which;
 
-    // Permitir letras mayúsculas y minúsculas, espacios, la letra ñ, números y letras con tildes
-    if ((codigoTecla >= 65 && codigoTecla <= 90)   // A-Z
+    // Permitir letras mayúsculas y minúsculas, espacios, la letra ñ, números, letras con tildes, punto y coma
+    if (
+        (codigoTecla >= 65 && codigoTecla <= 90)  // A-Z
         || (codigoTecla >= 97 && codigoTecla <= 122)  // a-z
         || codigoTecla === 32  // espacio
-        || codigoTecla === 209  // letra Ñ
+        || codigoTecla === 209  // letra Ñ mayúscula
+        || codigoTecla === 241  // letra ñ minúscula
         || (codigoTecla >= 48 && codigoTecla <= 57)  // 0-9
-        || (codigoTecla >= 160 && codigoTecla <= 163) // letras con tilde mayúsculas (Á, É, Í, Ó, Ú)
-        || (codigoTecla >= 181 && codigoTecla <= 186) // letras con tilde minúsculas (á, é, í, ó, ú)
-        || codigoTecla === 225) { // código específico para letras acentuadas (á, é, í, ó, ú)
+        || codigoTecla === 46  // punto (.)
+        || codigoTecla === 64  // arroba (@)
+        || (codigoTecla >= 192 && codigoTecla <= 222) // Otros caracteres especiales como acentos (`) y tildes
+        || codigoTecla === 225  // á (en teclados con distribución hispana)
+        || codigoTecla === 233  // é
+        || codigoTecla === 237  // í
+        || codigoTecla === 243  // ó
+        || codigoTecla === 250  // ú
+    ) {
         return true;
     } else {
         event.preventDefault();
         return false;
     }
 }
+
 
 
 
